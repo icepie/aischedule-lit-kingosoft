@@ -317,7 +317,12 @@ function scheduleHtmlParser(html) {
     let trList = Array.from($raw)
 
     for (let tr of trList) {
-        console.log("课程: " + tr.children[1].children[0].children[0].data);
+        console.info(
+        "课程: " + tr.children[1].children[0].children[0].data + "\n" +
+        "老师: " + tr.children[4].children[0].children[0].data + "\n" +
+        "详情: " + tr.children[10].children[0].data
+        );
+        
     }
 
     return JSON.parse(html);
