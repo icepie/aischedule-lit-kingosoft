@@ -1,0 +1,146 @@
+{
+    "courseInfos": [
+      {
+        "name": "数学",
+        "position": "教学楼1",
+        "teacher": "张三",
+        "weeks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "day": 3,
+        "sections": [
+          {
+            "section": 2,
+            "startTime": "08:00",//可不填
+            "endTime": "08:50"//可不填
+          }
+        ],
+      },
+      {
+        "name": "语文",
+        "position": "基础楼",
+        "teacher": "荆州",
+        "weeks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "day": 2,
+        "sections": [
+          {
+            "section": 2,
+            "startTime": "08:00",//可不填
+            "endTime": "08:50"//可不填
+          },
+          {
+            "section": 3,
+            "startTime": "09:00",//可不填
+            "endTime": "09:50"//可不填
+          }
+        ],
+      }
+    ],
+    "sectionTimes": [
+      {
+        "section": 1,
+        "startTime": "07:00",
+        "endTime": "07:50"
+      },
+      {
+        "section": 2,
+        "startTime": "08:00",
+        "endTime": "08:50"
+      },
+      {
+        "section": 3,
+        "startTime": "09:00",
+        "endTime": "09:50"
+      },
+      {
+        "section": 4,
+        "startTime": "10:10",
+        "endTime": "11:00"
+      },
+      {
+        "section": 5,
+        "startTime": "11:10",
+        "endTime": "12:00"
+      },
+      {
+        "section": 6,
+        "startTime": "13:00",
+        "endTime": "13:50"
+      },
+      {
+        "section": 7,
+        "startTime": "14:00",
+        "endTime": "14:50"
+      },
+      {
+        "section": 8,
+        "startTime": "15:10",
+        "endTime": "16:00"
+      },
+      {
+        "section": 9,
+        "startTime": "16:10",
+        "endTime": "17:00"
+      },
+      {
+        "section": 10,
+        "startTime": "17:10",
+        "endTime": "18:00"
+      },
+      {
+        "section": 11,
+        "startTime": "18:40",
+        "endTime": "19:30"
+      },
+      {
+        "section": 12,
+        "startTime": "19:40",
+        "endTime": "20:30"
+      },
+      {
+        "section": 13,
+        "startTime": "20:40",
+        "endTime": "21:30"
+      }
+    ]
+  }
