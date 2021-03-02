@@ -310,15 +310,15 @@ function parser(tbody) {
 
 
 function scheduleHtmlParser(html) {
-    let $raw = $('tr[style]')
+    let $raw = $('tr[style]').toArray()
 
-
-//     trList = Array.from($raw)
     console.log($raw);
 
-//     for (let tr of trList) {
-//         console.log(tr);
-//     }
+    let trList = Array.from($raw)
+
+    for (let tr of trList) {
+        console.log("课程: " + tr.children[1].children[0].children[0].data);
+    }
 
     return JSON.parse(html);
 }
