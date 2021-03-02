@@ -40,18 +40,19 @@ function sectionText2List(text) {
 }
 
 // "7-9,10-11" -> [7,8,9,10,11]
-function multiWeekText2List(text) {
+function multiWeekText2List(text,mode=0) {
     let sections = [];
     let splited = text.split(",");
     for (let t of splited) {
-        let sec = weekText2List(t);
+        let sec = weekText2List(t,mode);
         sections = sections.concat(sec);
     }
     return sections;
 }
 
 // "7-9" -> [7,8,9]
-function weekText2List(text) {
+// mode: 0, 1, 2
+function weekText2List(text,mode=0) {
     let sections = [];
     let splited = text.split("-");
     if (splited.length == 1) {
@@ -61,7 +62,19 @@ function weekText2List(text) {
     let start = Number(splited[0]);
     let end = Number(splited[1]);
     for (let i = start; i <= end; i++) {
-        sections.push(i);
+        if (mode == 1 && i % 2 == 1)
+        {
+           sections.push(i);
+        }
+        else if (mode == 2 && i % 2 == 0)
+        {
+           sections.push(i);
+        }
+        else if (mode == 0)
+        {
+           sections.push(i);
+        }
+       
     }
     return sections;
 }
@@ -72,16 +85,19 @@ function substringBefore(obj, s) {
         return obj;
     return obj.substring(0, index);
 }
+
 function substringBeforeLast(obj, s) {
     let index = obj.lastIndexOf(s);
     return obj.substring(0, index);
 }
+
 function substringAfter(obj, s) {
     let index = obj.indexOf(s);
     if (index == -1)
         return obj;
     return obj.substring(index + s.length, obj.length);
 }
+
 function substringAfterLast(obj, s) {
     let index = obj.lastIndexOf(s);
     return obj.substring(index +  s.length, obj.length);
@@ -267,13 +283,27 @@ function scheduleHtmlParser(html) {
             let timeText = splited[0]
             let weekText = substringBefore(timeText, "星期")
             let weekDayAndSectionText = substringAfter(timeText, "星期")
-            let week = substringBefore(substringAfter(weekText, "["), "周").replace("双","").replace("单","")
+            
+            let week = substringBefore(substringAfter(weekText, "["), "周")
+            
+            // 单双周之分, 默认不区分
+            let weekMode = 0
+
+            if (week.indexOf("单") != -1)
+            {
+                weekMode = 1
+            }
+
+            if (week.indexOf("双") != -1)
+            {
+                weekMode = 2
+            }
 
             // 星期
             let courseDay = week2Day(weekDayAndSectionText.substring(0, 1))
             let section = substringBefore(substringAfter(weekDayAndSectionText, "["), "节")
             // 周
-            let courseWeeks = multiWeekText2List(week)
+            let courseWeeks = multiWeekText2List(week.replace("双","").replace("单",""),weekMode)
             // 节
             let courseSections = multisectionText2List(section)
             
@@ -304,7 +334,6 @@ function scheduleHtmlParser(html) {
         sectionTimes: sectionTime
     }
 
-    console.info(result)
   
     return result;
 }
