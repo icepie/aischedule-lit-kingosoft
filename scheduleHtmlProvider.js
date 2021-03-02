@@ -3,7 +3,7 @@
 * last updated @ 2021/03/02 21:26
 * Any question or assistances please contact: mailto:icepie.dev@gmail.com
 * this project has been updated to Github:
-** https://github.com/Holit/HEU_edusys_miui
+** https://github.com/icepie/AIschedule-LIT-Kingosoft
 ***************************************************************************************/
 //scheduleHtmlProvider.js:get html data from the website and pass them to parse
 function scheduleHtmlProvider(iframeContent = "", frameContent = "", dom = document) {
