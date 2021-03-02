@@ -319,10 +319,21 @@ function scheduleHtmlParser(html) {
     for (let tr of trList) {
         console.info(
         "课程: " + tr.children[1].children[0].children[0].data + "\n" +
-        "老师: " + tr.children[4].children[0].children[0].data + "\n" +
-        "详情: " + tr.children[10].children[0].data
+        "老师: " + tr.children[4].children[0].children[0].data + "\n"
         );
-        
+
+       // 判断课程详情是否存在 
+       if (tr.children[10].children.length > 0)
+       {
+           console.info(tr.children[10].children[0].data)
+           
+           // 这是以 br 分割的时间节点, 所以这里以JQuery的方式进行遍历
+           split = tr.children[10].children[1]
+           for (var i=0;split.children.length > i ;split = split.children[1])
+           {
+               console.info(split.children[0].data)
+           }
+       }
     }
 
     return JSON.parse(html);
