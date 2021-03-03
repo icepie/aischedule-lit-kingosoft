@@ -131,28 +131,28 @@ let sectionTimeSummer = [
     },
     {
         section: 6,
-        startTime: "15:20",
-        endTime: "16:05"
+        startTime: "15:25",
+        endTime: "16:10"
     },
     {
         section: 7,
-        startTime: "16:25",
-        endTime: "17:10"
+        startTime: "16:30",
+        endTime: "17:15"
     },
     {
         section: 8,
-        startTime: "17:20",
-        endTime: "18:05"
+        startTime: "17:25",
+        endTime: "18:10"
     },
     {
         section: 9,
-        startTime: "18:10",
-        endTime: "18:55"
+        startTime: "19:00",
+        endTime: "19:45"
     },
     {
         section: 10,
-        startTime: "19:30",
-        endTime: "20:15"
+        startTime: "19:55",
+        endTime: "20:40"
     },
     {
         section: 11,
