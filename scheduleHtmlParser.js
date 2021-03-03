@@ -1,3 +1,11 @@
+/*************************************************************************************
+* Author : icepie
+* last updated @ 2021/03/02 21:26
+* Any question or assistances please contact: mailto:icepie.dev@gmail.com
+* this project has been updated to Github:
+** https://github.com/icepie/AIschedule-LIT-Kingosoft
+***************************************************************************************/
+
 function week2Day(day) {
     switch (day) {
         case "一": return 1;
@@ -209,6 +217,7 @@ let sectionTimeWinter = [
     },
 ]
 
+// main parser
 function scheduleHtmlParser(html) {
 
     // 课程列表
