@@ -20,9 +20,9 @@
 - 再点击从教务导入课程表
 - 成功登录教务在线后直接点击导入即可 (无需点击到课表页面)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/cded29b4-d969-45a3-919c-a0245013c0a6.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/9ead5234-f104-40bc-9c89-827339a013c9.jpg)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/9d3b4f61-aa8e-4273-b21f-1e918b8d70ae.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/d4ee15e3-e931-450a-b814-143c518d9765.jpg)
 
 
 ## 最后
