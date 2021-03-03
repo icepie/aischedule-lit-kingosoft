@@ -154,16 +154,6 @@ let sectionTimeSummer = [
         startTime: "19:55",
         endTime: "20:40"
     },
-    {
-        section: 11,
-        startTime: "20:20",
-        endTime: "21:05"
-    },
-    {
-        section: 12,
-        startTime: "21:10",
-        endTime: "21:55"
-    },
 ]
 
 let sectionTimeWinter = [
@@ -187,45 +177,35 @@ let sectionTimeWinter = [
         startTime: "10:55",
         endTime: "11:40"
     },
-    {
+     {
         section: 5,
-        startTime: "14:00",
-        endTime: "14:45"
+        startTime: "14:30",
+        endTime: "15:15"
     },
     {
         section: 6,
-        startTime: "14:50",
-        endTime: "15:33"
+        startTime: "15:25",
+        endTime: "16:10"
     },
     {
         section: 7,
-        startTime: "15:55",
-        endTime: "16:40"
+        startTime: "16:30",
+        endTime: "17:15"
     },
     {
         section: 8,
-        startTime: "16:50",
-        endTime: "17:35"
+        startTime: "17:25",
+        endTime: "18:10"
     },
     {
         section: 9,
-        startTime: "17:40",
-        endTime: "18:25"
-    },
-    {
-        section: 10,
         startTime: "19:00",
         endTime: "19:45"
     },
     {
-        section: 11,
-        startTime: "19:50",
-        endTime: "20:35"
-    },
-    {
-        section: 12,
-        startTime: "20:40",
-        endTime: "21:25"
+        section: 10,
+        startTime: "19:55",
+        endTime: "20:40"
     },
 ]
 
