@@ -220,12 +220,33 @@ function scheduleHtmlParser(html) {
 
     // 遍历处理
     for (let tr of trList) {
+       
+       let courseName = ""
+       // 判断课程是否存在
+       if (tr.children[1].children[0].children.length > 0)
+       {
+           // 课程名称
+           courseName = tr.children[1].children[0].children[0].data
+           // 去掉课程编号
+           courseName = substringAfterLast(tr.children[1].children[0].children[0].data, "]");
 
-        // 课程名称
-        courseName = tr.children[1].children[0].children[0].data
+       }
+       else
+       {
+           // 不在就跳过此条
+           continue
+       }
 
-        // 课程教师
-        courseTeacher = tr.children[4].children[0].children[0].data
+
+   
+       // 课程教师
+       let courseTeacher = ""
+       if (tr.children[4].children[0].children.length > 0)
+       { 
+            courseTeacher = tr.children[4].children[0].children[0].data
+            // 去掉教师职称编号
+            //courseTeacher = substringBefore(courseTeacher, "[")
+       }
         
         // 创建一个存放元数据
         courseInfoRawArray = []
@@ -255,7 +276,9 @@ function scheduleHtmlParser(html) {
             if (splited.length > 1) {
                 coursePosition = splited[1];
             }
-            if (coursePosition == "在线课程上课时间见通知") {
+
+            // 慕课类判断
+            if (courseName.substr(0, 1) == "m") {
                 coursePosition = "在线"
             }
             
@@ -297,6 +320,7 @@ function scheduleHtmlParser(html) {
             }
 
             courseInfoList.push(courseInfo)
+           
         }
         
     }
@@ -314,6 +338,5 @@ function scheduleHtmlParser(html) {
         sectionTimes: sectionTime
     }
 
-  
     return result;
 }
