@@ -19,8 +19,6 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/69528aaf-e535-4129-aa5e-f18013ef860a.jpg)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/30dfb22f-dd57-44c8-a93a-edd387aa33f7.jpg)
-
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/83dc490b-d8e3-442d-bd7a-a8ba97b331c4.jpg)
 
 
