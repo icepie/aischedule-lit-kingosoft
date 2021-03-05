@@ -2,6 +2,11 @@
 
 尝试给洛阳理工学院的青果教务系统适配一下小爱课程表
 
+![](https://img.shields.io/badge/dynamic/json?color=blue&label=%E5%BC%80%E5%8F%91%E8%80%85&query=%24.coderName&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)
+![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=%E4%BD%BF%E7%94%A8%E4%BA%BA%E6%95%B0&query=%24.usedNum&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)
+[![QQ Group](https://img.shields.io/badge/qq%20group-768887710-red.svg)](https://jq.qq.com/?_wv=1027&k=lz0XyN86)
+[![TG Group](https://img.shields.io/badge/tg%20group-lit_edu-blue.svg)](https://t.me/lit_edu)
+
 ## 进度
 
 > 太操蛋了开发者工具实现了正常解析成小爱课表, ~但真机测试却不通过 :(~
