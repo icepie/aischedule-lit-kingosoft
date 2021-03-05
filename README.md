@@ -4,8 +4,8 @@
 
 [![](https://img.shields.io/badge/dynamic/json?color=blue&label=%E5%BC%80%E5%8F%91%E8%80%85&query=%24.coderName&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)](https://blog.icepie.net/)
 ![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=%E4%BD%BF%E7%94%A8%E4%BA%BA%E6%95%B0&query=%24.usedNum&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)
-[![QQ Group](https://img.shields.io/badge/qq%20group-768887710-red.svg)](https://jq.qq.com/?_wv=1027&k=lz0XyN86)
-[![TG Group](https://img.shields.io/badge/tg%20group-lit_edu-blue.svg)](https://t.me/lit_edu)
+[![QQ Group](https://img.shields.io/badge/QQ%20群-768887710-red.svg)](https://jq.qq.com/?_wv=1027&k=lz0XyN86)
+[![TG Group](https://img.shields.io/badge/TG%20群-lit_edu-blue.svg)](https://t.me/lit_edu)
 
 ## 进度
 
@@ -51,4 +51,3 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/9ead5234-f104-40bc-9c89-827339a013c9.jpg)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/d4ee15e3-e931-450a-b814-143c518d9765.jpg)
