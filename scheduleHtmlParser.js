@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Author : icepie
-* last updated @ 2021/03/02 21:26
+* last updated @ 2021/03/05 11:26
 * Any question or assistances please contact: mailto:icepie.dev@gmail.com
 * this project has been updated to Github:
 ** https://github.com/icepie/AIschedule-LIT-Kingosoft
@@ -253,8 +253,8 @@ function scheduleHtmlParser(html) {
        if (tr.children[4].children[0].children.length > 0)
        { 
             courseTeacher = tr.children[4].children[0].children[0].data
-            // 去掉教师职称编号
-            //courseTeacher = substringBefore(courseTeacher, "[")
+            // 去掉教师职称
+            courseTeacher = substringBefore(courseTeacher, "[")
        }
         
         // 创建一个存放元数据
