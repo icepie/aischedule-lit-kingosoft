@@ -291,6 +291,7 @@ function scheduleHtmlParser(html) {
             
             // 处理上课时间
             let timeText = splited[0]
+
             let weekText = substringBefore(timeText, "星期")
             let weekDayAndSectionText = substringAfter(timeText, "星期")
             
@@ -311,10 +312,13 @@ function scheduleHtmlParser(html) {
 
             // 星期
             let courseDay = week2Day(weekDayAndSectionText.substring(0, 1))
+            // 节数截取
+            // 210318 更新格式: https://github.com/icepie/AIschedule-LIT-Kingosoft/commit/d57009c1eaf1cb95fcb32b493bb265603fd11002
+            //let section = substringBefore(substringAfter(weekDayAndSectionText, "["), "节")
             let section = substringBefore(substringAfter(weekDayAndSectionText, " "), "节")
-            // 周
+            // 生成周列表
             let courseWeeks = multiWeekText2List(week.replace("双","").replace("单",""),weekMode)
-            // 节
+            // 生成节列表
             let courseSections = multisectionText2List(section)
             
             let courseInfo = {
