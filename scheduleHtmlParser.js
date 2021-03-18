@@ -94,17 +94,17 @@ function substringBefore(obj, s) {
     return obj.substring(0, index);
 }
 
-function substringBeforeLast(obj, s) {
-    let index = obj.lastIndexOf(s);
-    return obj.substring(0, index);
-}
+// function substringBeforeLast(obj, s) {
+//     let index = obj.lastIndexOf(s);
+//     return obj.substring(0, index);
+// }
 
-function substringAfter(obj, s) {
-    let index = obj.indexOf(s);
-    if (index == -1)
-        return obj;
-    return obj.substring(index + s.length, obj.length);
-}
+// function substringAfter(obj, s) {
+//     let index = obj.indexOf(s);
+//     if (index == -1)
+//         return obj;
+//     return obj.substring(index + s.length, obj.length);
+// }
 
 function substringAfterLast(obj, s) {
     let index = obj.lastIndexOf(s);
@@ -290,36 +290,35 @@ function scheduleHtmlParser(html) {
             }
             
             // 处理上课时间
-            let timeText = splited[0]
+            let timeText = splited[0].replace("节","").replace("[","").replace("周","").replace("]","")
 
-            let weekText = substringBefore(timeText, "星期")
-            let weekDayAndSectionText = substringAfter(timeText, "星期")
-            
-            let week = substringBefore(substringAfter(weekText, "["), "周")
-            
+            // 分割详细时间 如: ["五", "3-4", "双", "1-16"] 或 ["二", "1-2", "1-16"]
+            let timeArray = timeText.trim().split(/\s+/)
+
             // 单双周之分, 默认不区分
             let weekMode = 0
+            let weeksText = timeArray[2]
 
-            if (week.indexOf("单") != -1)
+            if (timeArray.length == 4)
             {
-                weekMode = 1
+                if (timeArray[2] == "单"){
+                    weekMode = 1
+                } else { // if (timeArray[2] == "双") 
+                    weekMode = 2
+                }
+                weeksText = timeArray[3]
             }
 
-            if (week.indexOf("双") != -1)
-            {
-                weekMode = 2
-            }
+            console.log(weekMode)
 
             // 星期
-            let courseDay = week2Day(weekDayAndSectionText.substring(0, 1))
-            // 节数截取
-            // 210318 更新格式: https://github.com/icepie/AIschedule-LIT-Kingosoft/commit/d57009c1eaf1cb95fcb32b493bb265603fd11002
-            //let section = substringBefore(substringAfter(weekDayAndSectionText, "["), "节")
-            let section = substringBefore(substringAfter(weekDayAndSectionText, " "), "节")
+            let courseDay = week2Day(timeArray[0])
+
             // 生成周列表
-            let courseWeeks = multiWeekText2List(week.replace("双","").replace("单",""),weekMode)
+            let courseWeeks = multiWeekText2List(weeksText,weekMode)
+
             // 生成节列表
-            let courseSections = multisectionText2List(section)
+            let courseSections = multisectionText2List(timeArray[1])
             
             let courseInfo = {
                 name: courseName ,
