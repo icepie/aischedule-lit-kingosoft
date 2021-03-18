@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Author : icepie
-* last updated @ 2021/03/05 11:26
+* last updated @ 2021/03/19 01:33
 * Any question or assistances please contact: mailto:icepie.dev@gmail.com
 * this project has been updated to Github:
 ** https://github.com/icepie/AIschedule-LIT-Kingosoft
@@ -246,8 +246,6 @@ function scheduleHtmlParser(html) {
            continue
        }
 
-
-   
        // 课程教师
        let courseTeacher = ""
        if (tr.children[4].children[0].children.length > 0)
@@ -313,7 +311,7 @@ function scheduleHtmlParser(html) {
 
             // 星期
             let courseDay = week2Day(weekDayAndSectionText.substring(0, 1))
-            let section = substringBefore(substringAfter(weekDayAndSectionText, "["), "节")
+            let section = substringBefore(substringAfter(weekDayAndSectionText, " "), "节")
             // 周
             let courseWeeks = multiWeekText2List(week.replace("双","").replace("单",""),weekMode)
             // 节
@@ -346,6 +344,8 @@ function scheduleHtmlParser(html) {
         courseInfos: courseInfoList,
         sectionTimes: sectionTime
     }
+
+    //console.log(result)
 
     return result;
 }
