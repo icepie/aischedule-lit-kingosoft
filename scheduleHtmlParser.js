@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Author : icepie
-* last updated @ 2021/03/19 13:45
+* last updated @ 2021/03/22 13:27
 * Any question or assistances please contact: mailto:icepie.dev@gmail.com
 * this project has been updated to Github:
 ** https://github.com/icepie/AIschedule-LIT-Kingosoft
@@ -276,7 +276,7 @@ function scheduleHtmlParser(html) {
         // 遍历处理优雅一点害
         for (let courseInfoRaw of courseInfoRawArray)
         {       
-            let splited = courseInfoRaw.split("/")
+            let splited = courseInfoRaw.split("/ ")
             
             // 处理上课地点
             let coursePosition = "";
