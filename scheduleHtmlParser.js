@@ -1,6 +1,6 @@
 /*************************************************************************************
 * Author : icepie
-* last updated @ 2021/03/22 13:27
+* last updated @ 2021/03/24 14:45
 * Any question or assistances please contact: mailto:icepie.dev@gmail.com
 * this project has been updated to Github:
 ** https://github.com/icepie/AIschedule-LIT-Kingosoft
@@ -94,17 +94,17 @@ function substringBefore(obj, s) {
     return obj.substring(0, index);
 }
 
-// function substringBeforeLast(obj, s) {
-//     let index = obj.lastIndexOf(s);
-//     return obj.substring(0, index);
-// }
+function substringBeforeLast(obj, s) {
+    let index = obj.lastIndexOf(s);
+    return obj.substring(0, index);
+}
 
-// function substringAfter(obj, s) {
-//     let index = obj.indexOf(s);
-//     if (index == -1)
-//         return obj;
-//     return obj.substring(index + s.length, obj.length);
-// }
+function substringAfter(obj, s) {
+    let index = obj.indexOf(s);
+    if (index == -1)
+        return obj;
+    return obj.substring(index + s.length, obj.length);
+}
 
 function substringAfterLast(obj, s) {
     let index = obj.lastIndexOf(s);
@@ -237,7 +237,7 @@ function scheduleHtmlParser(html) {
            // 课程名称
            courseName = tr.children[1].children[0].children[0].data
            // 去掉课程编号
-           courseName = substringAfterLast(courseName, "]");
+           courseName = substringAfterLast(tr.children[1].children[0].children[0].data, "]");
 
        }
        else
@@ -275,51 +275,108 @@ function scheduleHtmlParser(html) {
 
         // 遍历处理优雅一点害
         for (let courseInfoRaw of courseInfoRawArray)
-        {       
-            let splited = courseInfoRaw.split("/ ")
-            
-            // 处理上课地点
-            let coursePosition = "";
-            if (splited.length > 1) {
-                coursePosition = splited[1];
-            }
+        {   
+            // 提前声明
+            let coursePosition = ""
+            let courseDay = ""
+            let courseWeeks = []
+            let courseSections = []
 
-            // 慕课类判断
-            if (courseName.substr(0, 1) == "m") {
-                coursePosition = "在线"
-            }
-            
-            // 处理上课时间
-            let timeText = splited[0].replace("节","").replace("[","").replace("周","").replace("]","")
-
-            // 分割详细时间 如: ["五", "3-4", "双", "1-16"] 或 ["二", "1-2", "1-16"]
-            let timeArray = timeText.trim().split(/\s+/)
-
-            // 单双周之分, 默认不区分
-            let weekMode = 0
-            let weeksText = timeArray[2]
-
-            if (timeArray.length == 4)
+            // 判断格式版本是否为 "[1-16周]星期一[5-6节]/XB309"
+            // 否则为 "一 5-6节 [1-16周]/ XB309"
+            if (courseInfoRaw.substring(0,1) == "[")
             {
-                if (timeArray[2] == "单"){
+                let splited = courseInfoRaw.split("/")
+
+                // 处理上课地点
+                if (splited.length > 1) {
+                    coursePosition = splited[1];
+                }
+
+                // 慕课类判断
+                if (courseName.substr(0, 1) == "m") {
+                    coursePosition = "在线"
+                }
+
+                // 处理上课时间
+                let timeText = splited[0]
+                let weekText = substringBefore(timeText, "星期")
+                let weekDayAndSectionText = substringAfter(timeText, "星期")
+
+                let week = substringBefore(substringAfter(weekText, "["), "周")
+
+
+                // 单双周之分, 默认不区分
+                let weekMode = 0
+
+
+                if (week.indexOf("单") != -1)
+                {
+
                     weekMode = 1
-                } else { // if (timeArray[2] == "双") 
+                }
+                
+                if (week.indexOf("双") != -1)
+                {
                     weekMode = 2
                 }
-                weeksText = timeArray[3]
+
+                // 星期
+                courseDay = week2Day(weekDayAndSectionText.substring(0, 1))
+                // 生成周列表
+                courseWeeks = multiWeekText2List(week.replace("双","").replace("单",""),weekMode)
+                // 生成节列表
+                let section = substringBefore(substringAfter(weekDayAndSectionText, "["), "节")
+                courseSections = multisectionText2List(section)
+
+            } else {
+
+                let splited = courseInfoRaw.split("/ ")
+
+                // 处理上课地点
+                if (splited.length > 1) {
+                    coursePosition = splited[1];
+                }
+
+                // 慕课类判断
+                if (courseName.substr(0, 1) == "m") {
+                    coursePosition = "在线"
+                }
+
+                // 处理上课时间
+                let timeText = splited[0].replace("节","").replace("[","").replace("周","").replace("]","")
+
+                // 分割详细时间 如: ["五", "3-4", "双", "1-16"] 或 ["二", "1-2", "1-16"]
+                let timeArray = timeText.trim().split(/\s+/)
+
+                // 单双周之分, 默认不区分
+                let weekMode = 0
+                let weeksText = timeArray[2]
+
+                if (timeArray.length == 4)
+                {
+                    if (timeArray[2] == "单"){
+                        weekMode = 1
+                    } else { // if (timeArray[2] == "双") 
+                        weekMode = 2
+                    }
+                    weeksText = timeArray[3]
+                }
+
+                // 星期
+                courseDay = week2Day(timeArray[0])
+
+                // 生成周列表
+                courseWeeks = multiWeekText2List(weeksText,weekMode)
+
+                // 生成节列表
+                courseSections = multisectionText2List(timeArray[1])
+
             }
 
-            // 星期
-            let courseDay = week2Day(timeArray[0])
 
-            // 生成周列表
-            let courseWeeks = multiWeekText2List(weeksText,weekMode)
-
-            // 生成节列表
-            let courseSections = multisectionText2List(timeArray[1])
-            
             let courseInfo = {
-                name: courseName ,
+                name: courseName,
                 position: coursePosition,
                 teacher: courseTeacher,
                 weeks: courseWeeks,
