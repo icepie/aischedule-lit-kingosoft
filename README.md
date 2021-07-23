@@ -1,6 +1,6 @@
 # AIschedule-LIT-Kingosoft
 
-尝试给洛阳理工学院的青果教务系统适配一下小爱课程表
+尝试给洛阳理工学院的青果教务系统适配一下小爱课程表 (2021年秋季正在适配中...)
 
 [![](https://img.shields.io/badge/dynamic/json?color=blue&label=%E5%BC%80%E5%8F%91%E8%80%85&query=%24.coderName&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)](https://blog.icepie.net/)
 ![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=%E4%BD%BF%E7%94%A8%E4%BA%BA%E6%95%B0&query=%24.usedNum&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)

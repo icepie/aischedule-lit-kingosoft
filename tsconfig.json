@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": true,
+    "alwaysStrict": false,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "noImplicitUseStrict": true,
+    "outDir": "dist",
+    "strict": true,
+    "target": "ES5"
+  },
+  "files": [
+    "scheduleHtmlProvider.ts",
+    "scheduleHtmlParser.ts"
+  ]
+}
