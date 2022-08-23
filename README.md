@@ -1,29 +1,52 @@
 # AIschedule-LIT-Kingosoft
 
-尝试给洛阳理工学院的青果教务系统适配一下小爱课程表 (2021年秋季正在适配中...)
+尝试给洛阳理工学院的青果教务系统适配一下小爱课程表
 
-[![](https://img.shields.io/badge/dynamic/json?color=blue&label=%E5%BC%80%E5%8F%91%E8%80%85&query=%24.coderName&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)](https://blog.icepie.net/)
-![](https://img.shields.io/badge/dynamic/json?color=blueviolet&label=%E4%BD%BF%E7%94%A8%E4%BA%BA%E6%95%B0&query=%24.usedNum&url=https%3A%2F%2Fopen-schedule.ai.xiaomi.com%2Fapi%2Fcoder%3Ftb_id%3D36075%26amp?style=plastic)
-[![QQ Group](https://img.shields.io/badge/QQ%20群-647027400-red.svg)](https://jq.qq.com/?_wv=1027&k=lz0XyN86)
 [![TG Group](https://img.shields.io/badge/TG%20群-lit_edu-blue.svg)](https://t.me/lit_edu)
 
 ## 进度
 
 - [X] 开发者工具
 - [X] E2E自测 
-  - [X] MIUI系统专版
-  - [X] IOS版本
-  - [X] Android普通版
+  - [X] MIUI 系统专版
+  - [X] IOS 版本
+  - [X] Android 普通版
+- [X] 爱课程表开发者工具本地测试
+- [X] TypeScript 重构
 
 ## 使用
 
 > 已正式上线小爱课程表开放使用啦~
-> 
-> 因为数据源于 `正选结果` 所以仅仅在开学前几周的选课时间可以导入哦
 
 - 设置中学校选择 `洛阳理工学院-青果教务管理系统`
 - 再点击从教务导入课程表
 - 成功登录教务在线后直接点击导入即可 (无需点击到课表页面)
+
+
+## 开发
+
+### 环境
+
+- Node.js + Chrome + 小爱课程表开发插件
+
+### 安装依赖
+
+```bash
+$ npm i
+# or yarn
+```
+
+### 运行
+```bash
+$ npm run start
+# or yarn start
+```
+
+即可和 `小爱课程表开发插件` 交互
+
+此时直接编辑 `src` 里的 `ts` 源码即可
+
+(简单魔改了一下, 会自动运行 `tsc` 编译同步)
 
 ## 更新日志
 
@@ -62,4 +85,7 @@
 有问题可以在我的主页找到联系方式的熬
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/9ead5234-f104-40bc-9c89-827339a013c9.jpg)
+
+
+
 
