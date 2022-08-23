@@ -48,6 +48,14 @@ $ npm run start
 
 (简单魔改了一下, 会自动运行 `tsc` 编译同步)
 
+### 构建
+```bash
+$ npm run build
+# or yarn build
+```
+
+构建完成在 `dist` 目录下
+
 ## 更新日志
 
 - 40477版本
