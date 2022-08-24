@@ -19,8 +19,6 @@ interface ParserResult {
 // buildDay 构建天
 function buildDay(dayStr: string): number {
 
-    console.log(dayStr)
-
     // map
     const dayMap = new Map<string, number>([
         ["一", 1],
@@ -33,10 +31,10 @@ function buildDay(dayStr: string): number {
     ]);
 
     dayStr = dayStr
-        .replaceAll(" ", "")
-        .replaceAll("周", "")
-        .replaceAll("星期", "")
-        .replaceAll("日", "天");
+        .replace(" ", "")
+        .replace("周", "")
+        .replace("星期", "")
+        .replace("日", "天");
 
     return dayMap.get(dayStr) || 7;
 }
@@ -45,7 +43,7 @@ function buildDay(dayStr: string): number {
 function buildSections(sectionStr: string): number[] {
     const ret: number[] = [];
     const se = sectionStr
-        .replaceAll("节", "")
+        .replace("节", "")
         .split("-");
     if (se.length === 2) {
         const s = parseInt(se[0]);
@@ -75,10 +73,10 @@ function buildWeeks(weekStr: string): number[] {
     }
 
     weekStr = weekStr
-        .replaceAll("周", "")
-        .replaceAll("单", "")
-        .replaceAll("双", "")
-        .replaceAll(" ", "");
+        .replace("周", "")
+        .replace("单", "")
+        .replace("双", "")
+        .replace(" ", "");
 
     const weekList = weekStr.split(",");
 
@@ -110,6 +108,7 @@ function buildWeeks(weekStr: string): number[] {
     return ret;
 }
 
+
 function trimSuffix(toTrim: string, trim: string): string {
     if (!toTrim || !trim) {
         return toTrim;
@@ -134,6 +133,7 @@ function trimPrefix(toTrim: string, trim: string): string {
     return toTrim.substring(trim.length);
 }
 
+
 /**
  * scheduleHtmlParser入口函数
  * @return {string}
@@ -143,6 +143,8 @@ const scheduleHtmlParser = (html: string): ParserResult => {
     let result: ParserResult = {
         courseInfos: []
     }
+
+    console.info("开始解析课表", html);
 
     // 获取课程表
     const tBody = $(html).find("table#pageRpt").find("table").eq(1).find("tbody");
@@ -199,6 +201,9 @@ const scheduleHtmlParser = (html: string): ParserResult => {
 
             const timePlaceList = timePlace.split("/");
 
+            if (timePlaceList.length == 0) {
+                continue;
+            }
 
             let place = "";
 
@@ -216,9 +221,9 @@ const scheduleHtmlParser = (html: string): ParserResult => {
             }
 
             const timeRawList = trimSuffix(trimPrefix(timePlaceList[0].trim(), "["), "]")
-                .replaceAll("[", " ")
-                .replaceAll("]", " ")
-                .replaceAll("  ", " ")
+                .replace("[", " ")
+                .replace("]", " ")
+                .replace("  ", " ")
                 .trim()
                 .split(" ");
 
