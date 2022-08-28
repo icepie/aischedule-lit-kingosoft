@@ -197,7 +197,7 @@ async function IsSecPage() {
 }
 
 async function SecJumpToJw() {
-    window.location.href = window.location.origin + "/webvpn/LjIwNi4xNzAuMjE4LjE2Mg==/LjIwOC4xNzMuMTQ4LjE1OC4xNTguMTcwLjk0LjE1Mi4xNTAuMjE2LjEwMi4xOTcuMjA5/cas_njjz.aspx?vpn-0"
+    window.location.href = window.location.origin + "/webvpn/LjE1Ni4xNzEuMjE2LjE2NQ==/LjE1OC4xNzQuMTQ2LjE2MS4xNTkuMTczLjE0NS4xNTguMTk5LjE2Ni45NS4xNTIuMTU4/cas_njjz.aspx?vpn-0"
 }
 
 async function IsSecLoginPage() {

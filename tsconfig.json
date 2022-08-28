@@ -5,10 +5,11 @@
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "noImplicitUseStrict": true,
-    "outDir": "code",
+    "outDir": "dist",
     "strict": true,
-    "target": "ES5"
+    "target": "ES5",
+    "types": ["@types/cheerio"]
   },
   "files": ["./src/parser.ts", "./src/provider.ts", "./src/timer.ts"],
-  "exclude": ["node_modules", "code"]
+  "exclude": ["node_modules", "code", "dist"]
 }
